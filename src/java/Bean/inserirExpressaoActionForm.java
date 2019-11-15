@@ -18,22 +18,43 @@ import org.apache.struts.action.ActionMessage;
  */
 public class inserirExpressaoActionForm extends org.apache.struts.action.ActionForm {
    
-     private Integer id;
+     private Integer idExpressao;
+     private Integer idPalavra;
      private Palavra palavra;
      private String expressao;
+     private String stringPalavra;
+     
+
+    public Integer getIdExpressao() {
+        return idExpressao;
+    }
+
+    public void setIdExpressao(Integer idExpressao) {
+        this.idExpressao = idExpressao;
+    }
+
+    public Integer getIdPalavra() {
+        return idPalavra;
+    }
+
+    public void setIdPalavra(Integer idPalavra) {
+        this.idPalavra = idPalavra;
+    }
+     
      
     public inserirExpressaoActionForm(int id, Palavra palavra, String expressao) {
-       this.id=id;
+       this.idExpressao=id;
        this.palavra = palavra;
        this.expressao = expressao;
+       this.idPalavra = palavra.getId();
     }
    
     public Integer getId() {
-        return this.id;
+        return this.idExpressao;
     }
     
     public void setId(Integer id) {
-        this.id = id;
+        this.idExpressao = id;
     }
     public Palavra getPalavra() {
         return this.palavra;
@@ -69,5 +90,13 @@ public class inserirExpressaoActionForm extends org.apache.struts.action.ActionF
             // TODO: add 'error.name.required' key to your resources
         }
         return errors;
+    }
+
+    public String getStringPalavra() {
+        return stringPalavra;
+    }
+
+    public void setStringPalavra(String stringPalavra) {
+        this.stringPalavra = stringPalavra;
     }
 }

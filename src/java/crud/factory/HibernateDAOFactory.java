@@ -7,6 +7,8 @@ package crud.factory;
 
 import crud.dao.HibernatePalavraDAO;
 import crud.dao.PalavraDAO;
+import crud.dao.ExpressaoDAO;
+import crud.dao.HibernateExpressaoDAO;
 
 /**
  *
@@ -17,5 +19,8 @@ public class HibernateDAOFactory extends DAOAbstractFactory {
     @Override
     public PalavraDAO createPalavraDAO() {
         return new HibernatePalavraDAO();
-    }    
+    }   
+    public ExpressaoDAO createExpressaoDAO() {
+        return new HibernateExpressaoDAO();
+    }  
 }

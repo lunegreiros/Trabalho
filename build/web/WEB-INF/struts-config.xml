@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="listarPalavraExpressaoActionForm" type="Bean.listarPalavraExpressaoActionForm"/>
         <form-bean name="consultarPalavraActionForm" type="Bean.consultarPalavraActionForm"/>
         <form-bean name="inserirExpressaoActionForm" type="Bean.inserirExpressaoActionForm"/>
         <form-bean name="inserirPalavraActionForm" type="Bean.inserirPalavraActionForm"/>
@@ -18,6 +19,7 @@
     </global-exceptions>
 
     <global-forwards>
+        <forward name="listarPalavraExpressao" path="/listarPalavraExpressao.jsp"/>
         <forward name="welcome"  path="/Welcome.do"/>
     </global-forwards>
 
@@ -30,6 +32,9 @@
         </action>
         <action input="/preindex.jsp" name="consultarPalavraActionForm" path="/consultarPalavra" scope="session" type="Action.consultarPalavraAction" validate="false">
             <forward name="success" path="/index.jsp"/>
+        </action>
+        <action input="/listarPalavraExpressao.jsp" name="listarPalavraExpressaoActionForm" path="/listarPalavraExpressao" scope="session" type="Action.listarPalavraExpressaoAction" validate="false">
+            <forward name="success" path="/listarPalavraExpressao.jsp" redirect="true"/>
         </action>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>

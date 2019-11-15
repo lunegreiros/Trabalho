@@ -53,6 +53,14 @@ public class Expressao  implements java.io.Serializable {
         this.expressao = expressao;
     }
 
+    public Integer getPalavra_id() {
+        return palavra_id;
+    }
+
+    public void setPalavra_id(Integer palavra_id) {
+        this.palavra_id = palavra_id;
+    }
+
 
 
 

@@ -22,9 +22,10 @@ import org.apache.struts.action.ActionMessage;
  */
 public class consultarPalavraActionForm extends org.apache.struts.action.ActionForm {
     
-   private Integer id;
+    private Integer id;
     private String palavra;
-    private Set expressaos = new HashSet(0);
+    private Set expressoes = new HashSet(0);
+    
     public consultarPalavraActionForm() {
         super();
         // TODO Auto-generated constructor stub
@@ -64,12 +65,12 @@ public class consultarPalavraActionForm extends org.apache.struts.action.ActionF
         this.palavra = palavra;
     }
 
-    public Set getExpressaos() {
-        return expressaos;
+    public Set getExpressoes() {
+        return expressoes;
     }
 
-    public void setExpressaos(Set expressaos) {
-        this.expressaos = expressaos;
+    public void setExpressoes(Set expressoes) {
+        this.expressoes = expressoes;
     }
     public List<Palavra> getPalavras() throws Exception {
         return DAOAbstractFactory.

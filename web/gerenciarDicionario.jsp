@@ -26,6 +26,7 @@
             <thead>
                 <tr>
                     <th>Palavras</th>
+                    <th>Inserir expressão</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,15 +34,18 @@
                     <logic:redirect action="consultarPalavra"/>
                 </logic:notPresent>
                 <logic:present name="consultarPalavraActionForm">
+                <table>
                     <logic:iterate name="consultarPalavraActionForm" property="palavras" id="palavra">
                         <tr>
-                            <td><html:link action="listarPalavraExpressao" paramName="palavra" paramProperty="id" paramId="idPalavra"><bean:write name="palavra" property="palavra"/></html:link></td>
-                        </tr>
+                            <td><bean:write name="palavra" property="palavra"/></td>
+                            <td><html:link action="inserirExpressao" paramName="palavra" paramProperty="id" paramId="idPalavra">Inserir</html:link></td>
+                            </tr>
                     </logic:iterate>
-                </logic:present>
-            </tbody>
-            <form action="gerenciarDicionario.jsp"><button>Gerenciar Dicionario</button></form>
-           
-            <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
-    </body>
+                </table>
+            </logic:present>
+        </tbody>
+        <form action="inserirPalavra.jsp"><button>Gerenciar Dicionario</button></form>
+
+        <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
+</body>
 </html>

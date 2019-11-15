@@ -5,6 +5,7 @@
  */
 package crud.factory;
 
+import crud.dao.ExpressaoDAO;
 import crud.dao.PalavraDAO;
 
 /**
@@ -16,6 +17,7 @@ public abstract class DAOAbstractFactory {
     public static final int HIBERNATE = 2;
     
     public abstract PalavraDAO createPalavraDAO();
+    public abstract ExpressaoDAO createExpressaoDAO();
     
     public static DAOAbstractFactory createFactory(int tipo) {
         switch(tipo) {

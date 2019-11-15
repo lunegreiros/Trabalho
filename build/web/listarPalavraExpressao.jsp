@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Dicionario</title>
+        <title>Palavra e expressões</title>
         <style type="text/css">
             ul {
                 float:left;
@@ -25,23 +25,34 @@
         <table border="0" cellspacing="5" cellpadding="2">
             <thead>
                 <tr>
-                    <th>Palavras</th>
+                    <th>Palavra</th>
                 </tr>
             </thead>
             <tbody>
-                <logic:notPresent name="consultarPalavraActionForm">
+                <logic:notPresent name="listarPalavraExpressaoActionForm">
                     <logic:redirect action="consultarPalavra"/>
                 </logic:notPresent>
-                <logic:present name="consultarPalavraActionForm">
-                    <logic:iterate name="consultarPalavraActionForm" property="palavras" id="palavra">
+                <html:form action="listarPalavraExpressao">
+                <table border="1">
+                    <tbody>
                         <tr>
-                            <td><html:link action="listarPalavraExpressao" paramName="palavra" paramProperty="id" paramId="idPalavra"><bean:write name="palavra" property="palavra"/></html:link></td>
+                            <td>Palavra</td>
+                            <td><bean:write name="listarPalavraExpressaoActionForm" property="stringPalavra"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </html:form>
+            <logic:present name="listarPalavraExpressaoActionForm">
+                <table>
+                    <logic:iterate name="listarPalavraExpressaoActionForm" property="expressoes" id="expressao">
+                        <tr>
+                            <td><bean:write name="expressao" property="expressao"/></td>
                         </tr>
                     </logic:iterate>
-                </logic:present>
-            </tbody>
-            <form action="gerenciarDicionario.jsp"><button>Gerenciar Dicionario</button></form>
-           
-            <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
-    </body>
+                </table>
+            </logic:present>
+        </tbody>
+
+        <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
+</body>
 </html>

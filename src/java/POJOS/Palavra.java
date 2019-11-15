@@ -11,20 +11,20 @@ public class Palavra implements java.io.Serializable {
 
     private Integer id;
     private String palavra;
-    private Set expressaos = new HashSet(0);
+    private Set expressoes = new HashSet(0);
 
     public Palavra() {
     }
     
-        public Palavra(String palavra, Set expressaos) {
+        public Palavra(String palavra, Set expressoes) {
         this.palavra = palavra;
-        this.expressaos = expressaos;
+        this.expressoes = expressoes;
     }
 
 
-    public Palavra(int id, String palavra, Set expressaos) {
+    public Palavra(int id, String palavra, Set expressoes) {
         this.palavra = palavra;
-        this.expressaos = expressaos;
+        this.expressoes = expressoes;
         this.id = id;
     }
 
@@ -44,12 +44,12 @@ public class Palavra implements java.io.Serializable {
         this.palavra = palavra;
     }
 
-    public Set getExpressaos() {
-        return this.expressaos;
+    public Set getExpressoes() {
+        return this.expressoes;
     }
 
-    public void setExpressaos(Set expressaos) {
-        this.expressaos = expressaos;
+    public void setExpressoes(Set expressoes) {
+        this.expressoes = expressoes;
     }
 
 }

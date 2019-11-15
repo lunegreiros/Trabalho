@@ -31,7 +31,7 @@
                     </tr>
                     <tr>
                         <td>Palavra Associada: </td>
-                        <td>"colocar indice de palavra associada"</td>
+                        <td><bean:write name="inserirExpressaoActionForm" property="idPalavra"/></td>
                     </tr>
                     <tr>
                         <td colspan="2" ><html:submit value="Inserir"/></td>

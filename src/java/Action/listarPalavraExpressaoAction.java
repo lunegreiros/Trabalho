@@ -5,24 +5,23 @@
  */
 package Action;
 
-import Bean.inserirExpressaoActionForm;
+import Bean.listarPalavraExpressaoActionForm;
 import POJOS.Expressao;
 import POJOS.Palavra;
-import Util.HibernateUtil;
 import crud.factory.DAOAbstractFactory;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 /**
  *
  * @author luneg
  */
-public class inserirExpressaoAction extends org.apache.struts.action.Action {
+public class listarPalavraExpressaoAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -41,18 +40,16 @@ public class inserirExpressaoAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        int numero = 11;
-        inserirExpressaoActionForm formbean = (inserirExpressaoActionForm) form;
-        Expressao expressao = new Expressao(0, numero, "alskdmçalsd");
-        DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createExpressaoDAO().create(expressao);
-        //Palavra palavra = DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().retrieveById(formbean.getIdPalavra());
-        //formbean.setStringPalavra(palavra.getPalavra());
-        /*Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(expressao);
-        transaction.commit();
-        session.close();
-        */
+        listarPalavraExpressaoActionForm formbean = (listarPalavraExpressaoActionForm) form;
+        List<Expressao> expressoes = new ArrayList();
+        Palavra palavra = DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().retrieveById(formbean.getIdPalavra());
+        formbean.setStringPalavra(palavra.getPalavra());
+        formbean.setIdPalavra(palavra.getId());
+        formbean.setPalavra_id(palavra.getId());
+        formbean.setObjPalavra(palavra);
+        expressoes = DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).
+                createExpressaoDAO().retrieveById(palavra.getId());
+        //formbean.reset(mapping, request);
         return mapping.findForward(SUCCESS);
     }
 }

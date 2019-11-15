@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class listarPalavraExpressao_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -14,7 +14,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_logic_present_name;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_logic_notPresent_name;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_html_errors_nobody;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_html_link_paramProperty_paramName_paramId_action;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_html_form_action;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_bean_write_property_name_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_logic_iterate_property_name_id;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_logic_redirect_action_nobody;
@@ -29,7 +29,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_logic_present_name = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_logic_notPresent_name = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_html_errors_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_html_link_paramProperty_paramName_paramId_action = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_html_form_action = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_bean_write_property_name_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_logic_iterate_property_name_id = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_logic_redirect_action_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
@@ -39,7 +39,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_logic_present_name.release();
     _jspx_tagPool_logic_notPresent_name.release();
     _jspx_tagPool_html_errors_nobody.release();
-    _jspx_tagPool_html_link_paramProperty_paramName_paramId_action.release();
+    _jspx_tagPool_html_form_action.release();
     _jspx_tagPool_bean_write_property_name_nobody.release();
     _jspx_tagPool_logic_iterate_property_name_id.release();
     _jspx_tagPool_logic_redirect_action_nobody.release();
@@ -79,7 +79,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Dicionario</title>\n");
+      out.write("        <title>Palavra e expressões</title>\n");
       out.write("        <style type=\"text/css\">\n");
       out.write("            ul {\n");
       out.write("                float:left;\n");
@@ -92,7 +92,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <table border=\"0\" cellspacing=\"5\" cellpadding=\"2\">\n");
       out.write("            <thead>\n");
       out.write("                <tr>\n");
-      out.write("                    <th>Palavras</th>\n");
+      out.write("                    <th>Palavra</th>\n");
       out.write("                </tr>\n");
       out.write("            </thead>\n");
       out.write("            <tbody>\n");
@@ -101,23 +101,28 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("                ");
+      if (_jspx_meth_html_form_0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("            ");
       //  logic:present
       org.apache.struts.taglib.logic.PresentTag _jspx_th_logic_present_0 = (org.apache.struts.taglib.logic.PresentTag) _jspx_tagPool_logic_present_name.get(org.apache.struts.taglib.logic.PresentTag.class);
       _jspx_th_logic_present_0.setPageContext(_jspx_page_context);
       _jspx_th_logic_present_0.setParent(null);
-      _jspx_th_logic_present_0.setName("consultarPalavraActionForm");
+      _jspx_th_logic_present_0.setName("listarPalavraExpressaoActionForm");
       int _jspx_eval_logic_present_0 = _jspx_th_logic_present_0.doStartTag();
       if (_jspx_eval_logic_present_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
+          out.write("                <table>\n");
           out.write("                    ");
           //  logic:iterate
           org.apache.struts.taglib.logic.IterateTag _jspx_th_logic_iterate_0 = (org.apache.struts.taglib.logic.IterateTag) _jspx_tagPool_logic_iterate_property_name_id.get(org.apache.struts.taglib.logic.IterateTag.class);
           _jspx_th_logic_iterate_0.setPageContext(_jspx_page_context);
           _jspx_th_logic_iterate_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_logic_present_0);
-          _jspx_th_logic_iterate_0.setName("consultarPalavraActionForm");
-          _jspx_th_logic_iterate_0.setProperty("palavras");
-          _jspx_th_logic_iterate_0.setId("palavra");
+          _jspx_th_logic_iterate_0.setName("listarPalavraExpressaoActionForm");
+          _jspx_th_logic_iterate_0.setProperty("expressoes");
+          _jspx_th_logic_iterate_0.setId("expressao");
           int _jspx_eval_logic_iterate_0 = _jspx_th_logic_iterate_0.doStartTag();
           if (_jspx_eval_logic_iterate_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             if (_jspx_eval_logic_iterate_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -127,12 +132,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
             }
             do {
               out.write("\n");
+              out.write("\n");
               out.write("                        <tr>\n");
               out.write("                            <td>");
-              if (_jspx_meth_html_link_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_logic_iterate_0, _jspx_page_context))
+              if (_jspx_meth_bean_write_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_logic_iterate_0, _jspx_page_context))
                 return;
               out.write("</td>\n");
               out.write("                        </tr>\n");
+              out.write("\n");
               out.write("                    ");
               int evalDoAfterBody = _jspx_th_logic_iterate_0.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -147,7 +154,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           }
           _jspx_tagPool_logic_iterate_property_name_id.reuse(_jspx_th_logic_iterate_0);
           out.write("\n");
-          out.write("                ");
+          out.write("                </table>\n");
+          out.write("            ");
           int evalDoAfterBody = _jspx_th_logic_present_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -159,14 +167,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       _jspx_tagPool_logic_present_name.reuse(_jspx_th_logic_present_0);
       out.write("\n");
-      out.write("            </tbody>\n");
-      out.write("            <form action=\"gerenciarDicionario.jsp\"><button>Gerenciar Dicionario</button></form>\n");
-      out.write("           \n");
-      out.write("            ");
+      out.write("        </tbody>\n");
+      out.write("\n");
+      out.write("        ");
       if (_jspx_meth_html_errors_0(_jspx_page_context))
         return;
       out.write(" <!-- tratamento de erro - feito em arquivo separado -->\n");
-      out.write("    </body>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -189,7 +196,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts.taglib.logic.NotPresentTag _jspx_th_logic_notPresent_0 = (org.apache.struts.taglib.logic.NotPresentTag) _jspx_tagPool_logic_notPresent_name.get(org.apache.struts.taglib.logic.NotPresentTag.class);
     _jspx_th_logic_notPresent_0.setPageContext(_jspx_page_context);
     _jspx_th_logic_notPresent_0.setParent(null);
-    _jspx_th_logic_notPresent_0.setName("consultarPalavraActionForm");
+    _jspx_th_logic_notPresent_0.setName("listarPalavraExpressaoActionForm");
     int _jspx_eval_logic_notPresent_0 = _jspx_th_logic_notPresent_0.doStartTag();
     if (_jspx_eval_logic_notPresent_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -230,59 +237,79 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_html_link_0(javax.servlet.jsp.tagext.JspTag _jspx_th_logic_iterate_0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_html_form_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  html:link
-    org.apache.struts.taglib.html.LinkTag _jspx_th_html_link_0 = (org.apache.struts.taglib.html.LinkTag) _jspx_tagPool_html_link_paramProperty_paramName_paramId_action.get(org.apache.struts.taglib.html.LinkTag.class);
-    _jspx_th_html_link_0.setPageContext(_jspx_page_context);
-    _jspx_th_html_link_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_logic_iterate_0);
-    _jspx_th_html_link_0.setAction("listarPalavraExpressao");
-    _jspx_th_html_link_0.setParamName("palavra");
-    _jspx_th_html_link_0.setParamProperty("id");
-    _jspx_th_html_link_0.setParamId("idPalavra");
-    int _jspx_eval_html_link_0 = _jspx_th_html_link_0.doStartTag();
-    if (_jspx_eval_html_link_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_html_link_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-        out = _jspx_page_context.pushBody();
-        _jspx_th_html_link_0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_html_link_0.doInitBody();
-      }
+    //  html:form
+    org.apache.struts.taglib.html.FormTag _jspx_th_html_form_0 = (org.apache.struts.taglib.html.FormTag) _jspx_tagPool_html_form_action.get(org.apache.struts.taglib.html.FormTag.class);
+    _jspx_th_html_form_0.setPageContext(_jspx_page_context);
+    _jspx_th_html_form_0.setParent(null);
+    _jspx_th_html_form_0.setAction("listarPalavraExpressao");
+    int _jspx_eval_html_form_0 = _jspx_th_html_form_0.doStartTag();
+    if (_jspx_eval_html_form_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        if (_jspx_meth_bean_write_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_html_link_0, _jspx_page_context))
+        out.write("\n");
+        out.write("                <table border=\"1\">\n");
+        out.write("                    <tbody>\n");
+        out.write("                        <tr>\n");
+        out.write("                            <td>Palavra</td>\n");
+        out.write("                            <td>");
+        if (_jspx_meth_bean_write_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_html_form_0, _jspx_page_context))
           return true;
-        int evalDoAfterBody = _jspx_th_html_link_0.doAfterBody();
+        out.write("</td>\n");
+        out.write("                        </tr>\n");
+        out.write("                    </tbody>\n");
+        out.write("                </table>\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_html_form_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
       } while (true);
-      if (_jspx_eval_html_link_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
-        out = _jspx_page_context.popBody();
     }
-    if (_jspx_th_html_link_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_html_link_paramProperty_paramName_paramId_action.reuse(_jspx_th_html_link_0);
+    if (_jspx_th_html_form_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_html_form_action.reuse(_jspx_th_html_form_0);
       return true;
     }
-    _jspx_tagPool_html_link_paramProperty_paramName_paramId_action.reuse(_jspx_th_html_link_0);
+    _jspx_tagPool_html_form_action.reuse(_jspx_th_html_form_0);
     return false;
   }
 
-  private boolean _jspx_meth_bean_write_0(javax.servlet.jsp.tagext.JspTag _jspx_th_html_link_0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_bean_write_0(javax.servlet.jsp.tagext.JspTag _jspx_th_html_form_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  bean:write
     org.apache.struts.taglib.bean.WriteTag _jspx_th_bean_write_0 = (org.apache.struts.taglib.bean.WriteTag) _jspx_tagPool_bean_write_property_name_nobody.get(org.apache.struts.taglib.bean.WriteTag.class);
     _jspx_th_bean_write_0.setPageContext(_jspx_page_context);
-    _jspx_th_bean_write_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_html_link_0);
-    _jspx_th_bean_write_0.setName("palavra");
-    _jspx_th_bean_write_0.setProperty("palavra");
+    _jspx_th_bean_write_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_html_form_0);
+    _jspx_th_bean_write_0.setName("listarPalavraExpressaoActionForm");
+    _jspx_th_bean_write_0.setProperty("stringPalavra");
     int _jspx_eval_bean_write_0 = _jspx_th_bean_write_0.doStartTag();
     if (_jspx_th_bean_write_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_bean_write_property_name_nobody.reuse(_jspx_th_bean_write_0);
       return true;
     }
     _jspx_tagPool_bean_write_property_name_nobody.reuse(_jspx_th_bean_write_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_bean_write_1(javax.servlet.jsp.tagext.JspTag _jspx_th_logic_iterate_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  bean:write
+    org.apache.struts.taglib.bean.WriteTag _jspx_th_bean_write_1 = (org.apache.struts.taglib.bean.WriteTag) _jspx_tagPool_bean_write_property_name_nobody.get(org.apache.struts.taglib.bean.WriteTag.class);
+    _jspx_th_bean_write_1.setPageContext(_jspx_page_context);
+    _jspx_th_bean_write_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_logic_iterate_0);
+    _jspx_th_bean_write_1.setName("expressao");
+    _jspx_th_bean_write_1.setProperty("expressao");
+    int _jspx_eval_bean_write_1 = _jspx_th_bean_write_1.doStartTag();
+    if (_jspx_th_bean_write_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_bean_write_property_name_nobody.reuse(_jspx_th_bean_write_1);
+      return true;
+    }
+    _jspx_tagPool_bean_write_property_name_nobody.reuse(_jspx_th_bean_write_1);
     return false;
   }
 
