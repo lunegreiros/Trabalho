@@ -45,7 +45,8 @@ public class excluirPalavraAction extends org.apache.struts.action.Action {
         
         excluirPalavraActionForm formbean = (excluirPalavraActionForm) form;
         Palavra palavra = DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().retrieveById(formbean.getId());
-        DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().delete(palavra);
+        DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createExpressaoDAO().removerExpressoes(palavra);
+        //DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().delete(palavra);
         return mapping.findForward(SUCCESS);
     }
 }

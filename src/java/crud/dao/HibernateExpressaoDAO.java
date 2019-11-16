@@ -12,6 +12,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import crud.dao.ExpressaoDAO;
+import crud.factory.DAOAbstractFactory;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import org.hibernate.Query;
 
 /**
  *
@@ -19,6 +24,8 @@ import crud.dao.ExpressaoDAO;
  */
 public class HibernateExpressaoDAO implements ExpressaoDAO {
 
+    Statement statement;
+    
     public void create(Expressao expressao) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -64,4 +71,40 @@ public class HibernateExpressaoDAO implements ExpressaoDAO {
         session.close();
     }
 
+    public void removerExpressoes(Palavra palavra) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        //List <Expressao> expressoes = new ArrayList();
+        //Host hd = new Host();
+        try {
+                
+                String HQL = "DELETE FROM expressao WHERE palavra_id = " + palavra.getId();
+                Query result = session.createQuery(HQL);
+//                while(result.iterate().hasNext()){
+//                    
+//                    Expressao expressao = (Expressao) result.list().get(0);
+//                    session.delete(expressao);
+//                }
+                
+                /*
+                int id = palavra.getId();
+                ResultSet result = statement.executeQuery("     SELECT * FROM expressao WHERE palavra_id = " + id +"    ");
+                result.next();
+                int expressaoId = result.getInt("id");
+                Expressao expressao = (Expressao) DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createExpressaoDAO().retrieveById(expressaoId);
+                session.delete(expressao);
+*/
+                //SQLQuery = "DELETE FROM expressao WHERE id = " + expressaoId;
+                //expressoes = result.ge
+                //session.delete(result);
+                //deletar todas as expressoes com 'expressaoId'
+                
+        } catch (Exception e) {
+            //JOptionPane.showMessageDialog(this, e.getMessage(), "Erro em excluir", JOptionPane.ERROR_MESSAGE);
+            System.out.println("Erro ao excluir expressões");
+        }
+        session.flush();
+        transaction.commit();
+        session.close();
+    }
 }

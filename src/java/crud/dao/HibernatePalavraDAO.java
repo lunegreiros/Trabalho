@@ -5,9 +5,15 @@
  */
 package crud.dao;
 
+import POJOS.Expressao;
 import POJOS.Palavra;
 import Util.HibernateUtil;
+import crud.factory.DAOAbstractFactory;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -16,6 +22,10 @@ import org.hibernate.Transaction;
  * @author aluno
  */
 public class HibernatePalavraDAO implements PalavraDAO {
+    
+    Statement statement;
+    ResultSet result;
+    
 
     public void create(Palavra palavra) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -25,7 +35,6 @@ public class HibernatePalavraDAO implements PalavraDAO {
         transaction.commit();
         session.close();
     }
-
 
     public List<Palavra> retrieveAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -47,6 +56,16 @@ public class HibernatePalavraDAO implements PalavraDAO {
     public void delete(Palavra palavra) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
+        session.delete(palavra);
+        session.flush();
+        transaction.commit();
+        session.close();
+    }
+
+    public void removerPalavra(Palavra palavra) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        
         session.delete(palavra);
         session.flush();
         transaction.commit();

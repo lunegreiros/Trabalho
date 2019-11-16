@@ -23,4 +23,6 @@ public interface PalavraDAO {
     public void update(Palavra palavra) throws Exception;
 
     public void delete(Palavra palavra) throws Exception;
+    
+    public void removerPalavra(Palavra palavra) throws Exception;
 }

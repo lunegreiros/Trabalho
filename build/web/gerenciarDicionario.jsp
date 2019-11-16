@@ -53,6 +53,7 @@
             <bean
                 </tbody>
                 <form action="inserirPalavra.jsp"><button>Inserir nova palavra</button></form>
+                <form action="index.jsp"><button>Voltar</button></form>
 
                 <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
                 </body>

@@ -24,4 +24,6 @@ public interface ExpressaoDAO {
     public void update(Expressao expressao) throws Exception;
 
     public void delete(Expressao expressao) throws Exception;
+    
+    public void removerExpressoes(Palavra palavra) throws Exception;
 }
