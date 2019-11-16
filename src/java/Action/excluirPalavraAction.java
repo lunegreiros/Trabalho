@@ -5,25 +5,25 @@
  */
 package Action;
 
-import Bean.inserirExpressaoActionForm;
-import Bean.listarPalavraExpressaoActionForm;
-import POJOS.Expressao;
+import Bean.consultarPalavraActionForm;
+import Bean.excluirPalavraActionForm;
 import POJOS.Palavra;
-import Util.HibernateUtil;
+import crud.dao.HibernatePalavraDAO;
 import crud.factory.DAOAbstractFactory;
+import crud.factory.HibernateDAOFactory;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 /**
  *
  * @author luneg
  */
-public class inserirExpressaoAction extends org.apache.struts.action.Action {
+public class excluirPalavraAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -42,11 +42,10 @@ public class inserirExpressaoAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        inserirExpressaoActionForm formbean = (inserirExpressaoActionForm) form;
+        
+        excluirPalavraActionForm formbean = (excluirPalavraActionForm) form;
         Palavra palavra = DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().retrieveById(formbean.getId());
-        formbean.setStringPalavra(palavra.getPalavra());
-        Expressao expressao = new Expressao(palavra, formbean.getExpressao());
-        DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createExpressaoDAO().create(expressao);
+        DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().delete(palavra);
         return mapping.findForward(SUCCESS);
     }
 }

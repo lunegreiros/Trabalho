@@ -89,6 +89,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <h1>Dicionario de Expressoes de Lugar-Comum</h1>\n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("        <table border=\"0\" cellspacing=\"5\" cellpadding=\"2\">\n");
       out.write("            <thead>\n");
       out.write("                <tr>\n");
@@ -160,6 +162,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_tagPool_logic_present_name.reuse(_jspx_th_logic_present_0);
       out.write("\n");
       out.write("            </tbody>\n");
+      out.write("        </table>\n");
       out.write("            <form action=\"gerenciarDicionario.jsp\"><button>Gerenciar Dicionario</button></form>\n");
       out.write("           \n");
       out.write("            ");

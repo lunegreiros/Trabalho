@@ -46,7 +46,7 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3307/diciolugarcomum?useTimezone=true&amp;serverTimezone=UTC</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">Nazca255865</property>
-    <mapping resource="POJOS/Expressao.hbm.xml"/>
     <mapping resource="POJOS/Palavra.hbm.xml"/>
+    <mapping resource="POJOS/Expressao.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

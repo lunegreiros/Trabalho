@@ -7,7 +7,6 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,8 +29,8 @@
                         <td><html:text name="inserirExpressaoActionForm" property="expressao"/></td>
                     </tr>
                     <tr>
-                        <td>Palavra Associada: </td>
-                        <td><bean:write name="inserirExpressaoActionForm" property="idPalavra"/></td>
+                        <td>ID Palavra Associada: </td>
+                        <td><html:text readonly="true" name="inserirExpressaoActionForm" property="id"/></td>
                     </tr>
                     <tr>
                         <td colspan="2" ><html:submit value="Inserir"/></td>
@@ -39,12 +38,8 @@
                 </tbody>
             </table>
 
-        </html:form>
+        
         <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
-        <hr>
-        <form action="inserirPalavra.jsp">
-            <button type="submit">Inserir Palavra</button>
-        </form>
-
+        </html:form>
     </body>
 </html>

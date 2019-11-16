@@ -22,6 +22,8 @@
     </head>
     <body>
         <h1>Dicionario de Expressoes de Lugar-Comum</h1>
+        
+        
         <table border="0" cellspacing="5" cellpadding="2">
             <thead>
                 <tr>
@@ -40,6 +42,7 @@
                     </logic:iterate>
                 </logic:present>
             </tbody>
+        </table>
             <form action="gerenciarDicionario.jsp"><button>Gerenciar Dicionario</button></form>
            
             <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->

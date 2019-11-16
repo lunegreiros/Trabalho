@@ -17,72 +17,18 @@ import org.apache.struts.action.ActionMessage;
  * @author luneg
  */
 public class inserirExpressaoActionForm extends org.apache.struts.action.ActionForm {
-   
-     private Integer idExpressao;
-     private Integer idPalavra;
+     private Integer id;
      private Palavra palavra;
      private String expressao;
      private String stringPalavra;
      
-
-    public Integer getIdExpressao() {
-        return idExpressao;
-    }
-
-    public void setIdExpressao(Integer idExpressao) {
-        this.idExpressao = idExpressao;
-    }
-
-    public Integer getIdPalavra() {
-        return idPalavra;
-    }
-
-    public void setIdPalavra(Integer idPalavra) {
-        this.idPalavra = idPalavra;
-    }
      
      
-    public inserirExpressaoActionForm(int id, Palavra palavra, String expressao) {
-       this.idExpressao=id;
-       this.palavra = palavra;
-       this.expressao = expressao;
-       this.idPalavra = palavra.getId();
-    }
-   
-    public Integer getId() {
-        return this.idExpressao;
-    }
-    
-    public void setId(Integer id) {
-        this.idExpressao = id;
-    }
-    public Palavra getPalavra() {
-        return this.palavra;
-    }
-    
-    public void setPalavra(Palavra palavra) {
-        this.palavra = palavra;
-    }
-    public String getExpressao() {
-        return this.expressao;
-    }
-    
-    public void setExpressao(String expressao) {
-        this.expressao = expressao;
-    }
-
     public inserirExpressaoActionForm() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param request The HTTP Request we are processing.
-     * @return
-     */
+    
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (getExpressao()== null || getExpressao().length() < 1) {
@@ -90,6 +36,31 @@ public class inserirExpressaoActionForm extends org.apache.struts.action.ActionF
             // TODO: add 'error.name.required' key to your resources
         }
         return errors;
+    }
+    
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Palavra getPalavra() {
+        return palavra;
+    }
+
+    public void setPalavra(Palavra palavra) {
+        this.palavra = palavra;
+    }
+
+    public String getExpressao() {
+        return expressao;
+    }
+
+    public void setExpressao(String expressao) {
+        this.expressao = expressao;
     }
 
     public String getStringPalavra() {

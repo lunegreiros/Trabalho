@@ -41,6 +41,6 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="diciolugarcomum"/>
-  <table-filter match-name="palavra"/>
   <table-filter match-name="expressao"/>
+  <table-filter match-name="palavra"/>
 </hibernate-reverse-engineering>

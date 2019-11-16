@@ -42,8 +42,7 @@ public class inserirPalavraAction extends org.apache.struts.action.Action {
             throws Exception {
         
         inserirPalavraActionForm formBean = (inserirPalavraActionForm) form;
-        Palavra palavra = new Palavra( 0, formBean.getPalavra(), new HashSet(0)  );
-        
+        Palavra palavra = new Palavra(formBean.getPalavra(), new HashSet(0));
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.save(palavra);

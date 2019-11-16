@@ -52,7 +52,7 @@
                 </table>
             </logic:present>
         </tbody>
-
+         <form action="index.jsp"><button>Nova pesquisa</button></form>
         <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
 </body>
 </html>

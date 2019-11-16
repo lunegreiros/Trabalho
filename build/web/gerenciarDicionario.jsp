@@ -21,12 +21,17 @@
         </style>
     </head>
     <body>
-        <h1>Dicionario de Expressoes de Lugar-Comum</h1>
+
+        <h1>Dicionario de Expressoes de Lugar-Comum</h1
+        <logic:present name="inserirExpressaoActionForm">
+            <h2>Expressao <bean:write name="inserirExpressaoActionForm" property="expressao"/> inserida!</h2>
+        </logic:present>
         <table border="0" cellspacing="5" cellpadding="2">
             <thead>
                 <tr>
                     <th>Palavras</th>
                     <th>Inserir expressão</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,14 +43,17 @@
                     <logic:iterate name="consultarPalavraActionForm" property="palavras" id="palavra">
                         <tr>
                             <td><bean:write name="palavra" property="palavra"/></td>
-                            <td><html:link action="inserirExpressao" paramName="palavra" paramProperty="id" paramId="idPalavra">Inserir</html:link></td>
+                            <td><html:link action="inserirExpressao" paramName="palavra" paramProperty="id" paramId="id">Inserir</html:link></td>
+                            <td><html:link action="excluirPalavra" paramName="palavra" paramProperty="id" paramId="id">Excluir</html:link></td>
                             </tr>
+                            
                     </logic:iterate>
                 </table>
             </logic:present>
-        </tbody>
-        <form action="inserirPalavra.jsp"><button>Gerenciar Dicionario</button></form>
+            <bean
+                </tbody>
+                <form action="inserirPalavra.jsp"><button>Inserir nova palavra</button></form>
 
-        <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
-</body>
-</html>
+                <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
+                </body>
+                </html>
