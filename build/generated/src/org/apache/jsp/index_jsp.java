@@ -80,29 +80,32 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Dicionario</title>\n");
-      out.write("        <style type=\"text/css\">\n");
-      out.write("            ul {\n");
-      out.write("                float:left;\n");
-      out.write("            }\n");
-      out.write("            * html li {margin-left:25px;}\n");
+      out.write("        <link rel=\"stylesheet\" href=\"flexbox_1.css\">\n");
+      out.write("        <style>\n");
+      out.write("            @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');\n");
       out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>Dicionario de Expressoes de Lugar-Comum</h1>\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("        <table border=\"0\" cellspacing=\"5\" cellpadding=\"2\">\n");
-      out.write("            <thead>\n");
-      out.write("                <tr>\n");
-      out.write("                    <th>Palavras</th>\n");
-      out.write("                </tr>\n");
-      out.write("            </thead>\n");
-      out.write("            <tbody>\n");
-      out.write("                ");
+      out.write("        <header class=\"header\">\n");
+      out.write("            <div class=\"white-text\">\n");
+      out.write("                Dicionário de Palavras e Expressões em Lugar-Comum\n");
+      out.write("            </div>\n");
+      out.write("\n");
+      out.write("            <nav>\n");
+      out.write("                <ul class=\"white-text\">\n");
+      out.write("                    <li><a href=\"#\">info</a></li>\n");
+      out.write("                </ul>\n");
+      out.write("\n");
+      out.write("            </nav>\n");
+      out.write("\n");
+      out.write("        </header>\n");
+      out.write("        <h1>Palavras</h1>\n");
+      out.write("        <section class=\"flex\">\n");
+      out.write("            ");
       if (_jspx_meth_logic_notPresent_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("                ");
+      out.write("            ");
       //  logic:present
       org.apache.struts.taglib.logic.PresentTag _jspx_th_logic_present_0 = (org.apache.struts.taglib.logic.PresentTag) _jspx_tagPool_logic_present_name.get(org.apache.struts.taglib.logic.PresentTag.class);
       _jspx_th_logic_present_0.setPageContext(_jspx_page_context);
@@ -112,7 +115,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_logic_present_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("                    ");
+          out.write("                <!--iterator aqui para cada div-->\n");
+          out.write("                ");
           //  logic:iterate
           org.apache.struts.taglib.logic.IterateTag _jspx_th_logic_iterate_0 = (org.apache.struts.taglib.logic.IterateTag) _jspx_tagPool_logic_iterate_property_name_id.get(org.apache.struts.taglib.logic.IterateTag.class);
           _jspx_th_logic_iterate_0.setPageContext(_jspx_page_context);
@@ -129,13 +133,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
             }
             do {
               out.write("\n");
-              out.write("                        <tr>\n");
-              out.write("                            <td>");
+              out.write("                    <div>\n");
+              out.write("                        ");
               if (_jspx_meth_html_link_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_logic_iterate_0, _jspx_page_context))
                 return;
-              out.write("</td>\n");
-              out.write("                        </tr>\n");
-              out.write("                    ");
+              out.write("\n");
+              out.write("                    </div>\n");
+              out.write("                ");
               int evalDoAfterBody = _jspx_th_logic_iterate_0.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
@@ -149,7 +153,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           }
           _jspx_tagPool_logic_iterate_property_name_id.reuse(_jspx_th_logic_iterate_0);
           out.write("\n");
-          out.write("                ");
+          out.write("            ");
           int evalDoAfterBody = _jspx_th_logic_present_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -161,16 +165,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       _jspx_tagPool_logic_present_name.reuse(_jspx_th_logic_present_0);
       out.write("\n");
-      out.write("            </tbody>\n");
-      out.write("        </table>\n");
-      out.write("            <form action=\"gerenciarDicionario.jsp\"><button>Gerenciar Dicionario</button></form>\n");
-      out.write("           \n");
+      out.write("        </section>\n");
+      out.write("\n");
+      out.write("            <hr>\n");
+      out.write("            <section class=\"flex\">\n");
+      out.write("                <form class=\"form\" action=\"gerenciarDicionario.jsp\">\n");
+      out.write("                    <button>Gerenciar Dicionário</button>\n");
+      out.write("                </form>\n");
+      out.write("            </section>\n");
+      out.write("\n");
       out.write("            ");
       if (_jspx_meth_html_errors_0(_jspx_page_context))
         return;
       out.write(" <!-- tratamento de erro - feito em arquivo separado -->\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("        </body>\n");
+      out.write("    </html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -197,11 +206,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_logic_notPresent_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("                    ");
+        out.write("                ");
         if (_jspx_meth_logic_redirect_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_logic_notPresent_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("                ");
+        out.write("            ");
         int evalDoAfterBody = _jspx_th_logic_notPresent_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;

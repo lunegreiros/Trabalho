@@ -13,36 +13,44 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Gerenciar Dicionario</title>
+        <title>Dicionário</title>
+        <link rel="stylesheet" href="flexbox_1.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+        </style>
 
     </head>
     <body>
-        <h1>Gerenciar Dicionario</h1>
-
-        
-        </table>
-        <hr>
-
-        <h2>Inserir Palavra nova:</h2>
-
+        <header class="header">
+            <div class="white-text">
+                <img src="img/Group2.png" alt="logo">
+                Dicionário de Palavras e Expressões de Lugar-Comum
+            </div>
+        </header>
+        <h1>Inserir palavra nova:</h1>
+        <br>
+        <section class="flex">
         <html:form action="inserirPalavra">
-            <!--tabela vem aqui-->
-            <table border="0" cellspacing="5" cellpadding="2">
-                <tbody>
-                    <tr>
-                        <td>Palavra: </td>
-                        <!--"name" chama o bean inserirPalavraActionForm-->
-                        <!--"property" associa-se c/ o VO/bean no campo nome-->
-                        <td><html:text name="inserirPalavraActionForm" property="palavra"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" ><html:submit value="Inserir"/></td>
-                    </tr>
-                </tbody>
-            </table>
-
+            <div>
+            Palavra:
+            <html:text name="inserirPalavraActionForm" property="palavra"/>
+            <html:submit value="Inserir"/>
+            </div>
+            
         </html:form>
-        <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
+        </section>
+        <section class="flex">
+            <div class="small">
+                <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
+            </div>
+        </section>
+        <br><br><br>
+
+        <hr>
+        <section class="flex">
+        <form class="form" action="gerenciarDicionario.jsp"><button>Voltar</button></form>
+        </section>
+
 
     </body>
 </html>

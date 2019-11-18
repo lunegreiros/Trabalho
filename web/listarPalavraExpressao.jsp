@@ -12,47 +12,57 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Palavra e expressões</title>
-        <style type="text/css">
-            ul {
-                float:left;
-            }
-            * html li {margin-left:25px;}
+        <title>Dicionário</title>
+        <link rel="stylesheet" href="flexbox_1.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
         </style>
     </head>
     <body>
-        <h1>Dicionario de Expressoes de Lugar-Comum</h1>
-        <table border="0" cellspacing="5" cellpadding="2">
-            <thead>
-                <tr>
-                    <th>Palavra</th>
-                </tr>
-            </thead>
-            <tbody>
+        <header class="header">
+            <div class="white-text">
+                        <img src="img/Group2.png" alt="logo">
+                        Dicionário de Palavras e Expressões de Lugar-Comum
+                </div>
+        </header>
+
+
+
+        <h1>Palavra e Expressões</h1>
+        <section>
+            <article class="row">
+                <h2 class="column col-left">Palavra:</h2>
+                <h2 class="column col-right">Expressões associadas:</h2>
+            </article>
+            <article class="row">
                 <logic:notPresent name="listarPalavraExpressaoActionForm">
                     <logic:redirect action="consultarPalavra"/>
                 </logic:notPresent>
                 <html:form action="listarPalavraExpressao">
-                <table border="1">
-                    <tbody>
-                        <tr>
-                            <td>Palavra</td>
-                            <td><bean:write name="listarPalavraExpressaoActionForm" property="stringPalavra"/></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </html:form>
-            <logic:present name="listarPalavraExpressaoActionForm">
-                <table>
-                    <logic:iterate name="listarPalavraExpressaoActionForm" property="expressoes" id="expressao">
-                        <tr>
-                            <td><bean:write name="expressao" property="expressao"/></td>
-                        </tr>
-                    </logic:iterate>
-                </table>
-            </logic:present>
-        </tbody>
-         <form action="index.jsp"><button>Nova pesquisa</button></form>
+                    <div class="column col-left">
+                        <bean:write name="listarPalavraExpressaoActionForm" property="stringPalavra"/>
+                    </div>
+                </html:form>
+                <div class="column col-right">
+                    <ul>
+                        <logic:present name="listarPalavraExpressaoActionForm">
+                            <logic:iterate name="listarPalavraExpressaoActionForm" property="expressoes" id="expressao">
+                                <li><bean:write name="expressao" property="expressao"/></li>
+                                </logic:iterate>
+                            </logic:present>
+                    </ul>
+                </div>
+            </article>
+
+
+        </section>
+        <br><br><br>
+        <hr>
+        <section class="flex">
+            <form class="form" action="index.jsp">
+                <button>Nova Pesquisa</button>
+            </form>
+        </section>
         <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
-</body>
+    </body>
 </html>
