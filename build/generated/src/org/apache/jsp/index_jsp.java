@@ -79,7 +79,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Dicionario</title>\n");
+      out.write("        <title>Dicionário</title>\n");
       out.write("        <link rel=\"stylesheet\" href=\"flexbox_1.css\">\n");
       out.write("        <style>\n");
       out.write("            @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');\n");
@@ -88,16 +88,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\n");
       out.write("        <header class=\"header\">\n");
       out.write("            <div class=\"white-text\">\n");
-      out.write("                Dicionário de Palavras e Expressões em Lugar-Comum\n");
-      out.write("            </div>\n");
-      out.write("\n");
-      out.write("            <nav>\n");
-      out.write("                <ul class=\"white-text\">\n");
-      out.write("                    <li><a href=\"#\">info</a></li>\n");
-      out.write("                </ul>\n");
-      out.write("\n");
-      out.write("            </nav>\n");
-      out.write("\n");
+      out.write("                        <img src=\"img/Group2.png\" alt=\"logo\">\n");
+      out.write("                        Dicionário de Palavras e Expressões de Lugar-Comum\n");
+      out.write("                </div>\n");
+      out.write("            \n");
       out.write("        </header>\n");
       out.write("        <h1>Palavras</h1>\n");
       out.write("        <section class=\"flex\">\n");
@@ -166,6 +160,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_tagPool_logic_present_name.reuse(_jspx_th_logic_present_0);
       out.write("\n");
       out.write("        </section>\n");
+      out.write("        <br><br><br>\n");
       out.write("\n");
       out.write("            <hr>\n");
       out.write("            <section class=\"flex\">\n");
