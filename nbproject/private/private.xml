@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/hibernate.reveng.xml</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/POJOS/Palavra.java</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/web/gerenciarDicionario.jsp</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/Action/excluirPalavraAction.java</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/crud/dao/PalavraDAO.java</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/POJOS/Expressao.java</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/POJOS/Palavra.hbm.xml</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/POJOS/Expressao.hbm.xml</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/hibernate.cfg.xml</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/crud/dao/HibernateExpressaoDAO.java</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/web/inserirPalavra.jsp</file>
+            <file>file:/D:/Documentos/Projetos%20JAVA/Trabalho/src/java/crud/dao/ExpressaoDAO.java</file>
+        </group>
     </open-files>
 </project-private>

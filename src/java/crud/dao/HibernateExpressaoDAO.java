@@ -71,15 +71,25 @@ public class HibernateExpressaoDAO implements ExpressaoDAO {
         session.close();
     }
 
-    public void removerExpressoes(Palavra palavra) {
+    public void removerExpressoes(Palavra palavra) throws Exception{
+        Palavra palavra2 = DAOAbstractFactory.createFactory(DAOAbstractFactory.HIBERNATE).createPalavraDAO().retrieveById(palavra.getId());
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
+        
+        session.delete(palavra2);
+                session.flush();
+        transaction.commit();
+        session.close();
+        
+        
         //List <Expressao> expressoes = new ArrayList();
         //Host hd = new Host();
-        try {
-                
-                String HQL = "DELETE FROM expressao WHERE palavra_id = " + palavra.getId();
-                Query result = session.createQuery(HQL);
+//        try {
+//                    
+//                    
+//                
+//                String HQL = "DELETE FROM Expressao WHERE id=" + palavra.getId();
+//                Query result = session.createQuery(HQL);
 //                while(result.iterate().hasNext()){
 //                    
 //                    Expressao expressao = (Expressao) result.list().get(0);
@@ -99,12 +109,10 @@ public class HibernateExpressaoDAO implements ExpressaoDAO {
                 //session.delete(result);
                 //deletar todas as expressoes com 'expressaoId'
                 
-        } catch (Exception e) {
-            //JOptionPane.showMessageDialog(this, e.getMessage(), "Erro em excluir", JOptionPane.ERROR_MESSAGE);
-            System.out.println("Erro ao excluir expressões");
-        }
-        session.flush();
-        transaction.commit();
-        session.close();
+//        } catch (Exception e) {
+//            //JOptionPane.showMessageDialog(this, e.getMessage(), "Erro em excluir", JOptionPane.ERROR_MESSAGE);
+//            System.out.println("Erro ao excluir expressões");
+//        }
+
     }
 }

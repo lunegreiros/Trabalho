@@ -11,7 +11,7 @@
         <property name="palavra" type="string">
             <column name="palavra" />
         </property>
-        <set name="expressaos" table="expressao" inverse="true" lazy="true" fetch="select">
+        <set name="expressaos" table="expressao" inverse="true" lazy="true" cascade="all" fetch="select">
             <key>
                 <column name="palavra_id" not-null="true" />
             </key>
